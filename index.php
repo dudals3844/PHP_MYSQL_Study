@@ -1,17 +1,16 @@
-<?php
-$conn = mysqli_connect("localhost", "choi", "1234", "opentutorials");
-$sql  = "
-    INSERT INTO topic (
-        title,
-        description,
-        created
-    ) VALUES (
-        'MySQL',
-        'MySQL is ....',
-        NOW()
-    )";
-$result = mysqli_query($conn, $sql);
-if($result === false){
-    echo mysqli_error($conn);
-}
-?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>WEB</title>
+    </head>
+    <body>
+        <h1>WEB</h1>
+        <ol>
+            <li>HTML</li>
+        </ol>
+        <a href="create.php">create</a>
+        <h2>Welcome</h2>
+        Lorem uosum dolor sit amet, conasfdhkashflkda shf
+    </body>
+</html>
