@@ -24,7 +24,8 @@
     
     
     if(isset($_GET['id'])){
-        $sql = "SELECT * FROM topic WHERE id = {$_GET['id']}";//14번중 ?id = {$row['id']}에서 GET으로 받았다.
+        $filtered_id = mysqli_real_escape_string($conn,$_GET['id']);//insert공격을 막기위해 보안을 추가했다.
+        $sql = "SELECT * FROM topic WHERE id = {$filtered_id}";//14번중 ?id = {$row['id']}에서 GET으로 받았다.
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($result);
         $article['title'] = $row['title'];
