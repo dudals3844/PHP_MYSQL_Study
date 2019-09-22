@@ -11,7 +11,8 @@
     $description_list = '';
     //<li><a href = "index.php?id=19">MYSQL</a></li>
     while($row = mysqli_fetch_array($result)){
-        $list = $list."<li><a href = \"index.php?id={$row['id']}\">{$row['title']}</li>";
+	    $escaped_title = htmlspecialchars($row['title']);//javascript코드를 심는 cross site scripting 차단
+        $list = $list."<li><a href = \"index.php?id={$row['id']}\">{$escaped_title}</li>";
         
     }
     
